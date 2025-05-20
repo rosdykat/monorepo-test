@@ -58,11 +58,13 @@ const db = new pg.Pool({
     connectionString: process.env.DB_URL,
 });
 
-app.get("/env-test", (req, res) => {
-  res.json({
-    dbUrl: process.env.DB_URL ? "✅ DB_URL loaded" : "❌ DB_URL missing",
-    DBPass: process.env.DB_PASSWORD ? "✅ DB PASSWORD key loaded" : "❌ DB PASSWORD key missing"
-  });
-});
+// Do this with Manny unsplash API
+// app.get("/images", async (req, res) => {
+//   const API = `https://api.unsplash.com/search/photos?client_id=${process.env.UNSPLASH_ACCESS_KEY}&query=puppy`;
+//   const response = await fetch(API);
+//   const imageData = await response.json();
+
+//   res.json(imageData.results);
+// });
 
 console.log("Loaded DB_URL:", process.env.DB_URL);
