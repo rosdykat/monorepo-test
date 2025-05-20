@@ -61,7 +61,7 @@ const db = new pg.Pool({
 app.get("/env-test", (req, res) => {
   res.json({
     dbUrl: process.env.DB_URL ? "✅ DB_URL loaded" : "❌ DB_URL missing",
-    unsplashKey: process.env.UNSPLASH_ACCESS_KEY ? "✅ UNSPLASH key loaded" : "❌ UNSPLASH key missing"
+    DBPass: process.env.DB_PASSWORD ? "✅ DB PASSWORD key loaded" : "❌ DB PASSWORD key missing"
   });
 });
 
